@@ -6,7 +6,7 @@
 /*   By: vflorez <vflorez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 17:49:55 by vflorez           #+#    #+#             */
-/*   Updated: 2023/08/04 11:05:31 by vflorez          ###   ########.fr       */
+/*   Updated: 2023/08/04 14:57:55 by vflorez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,19 @@ static int	ft_interpret(char format, va_list args)
 	else if (format == 'X')
 		return (ft_hex_upper(va_arg(args, unsigned int)));
 	return (0);
+}
+
+int main()
+{
+	char const *prueba = "%c %d %s %x %X";
+	
+	ft_printf(prueba, 'c', 2335455, "vradis hola ", 48879, 48879);
+
+	int x = 42;
+	int *ptr = &x;
+
+	ft_printf("valor x : %d", ptr);
+	ft_printf("direccion memoria : %p", ptr);
+	
+	return(0);
 }
